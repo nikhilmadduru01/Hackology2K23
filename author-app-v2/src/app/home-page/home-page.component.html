@@ -1,6 +1,24 @@
-<div class="text-feild">
-    <mat-form-field>
-        <mat-label> Please Enter Text </mat-label>
-        <textarea matInput></textarea>
-    </mat-form-field>
-</div>
+<div class="container">
+    <div class="text-area">
+        <ckeditor [config]="ckeConfig" data=""></ckeditor>
+
+    </div>
+    <div class="input-file">
+        <input type="file" class="file-input" (change)="onChange($event)" #fileUpload />
+
+        <div *ngIf="file">
+            <section class="file-info">
+                File details:
+                <ul>
+                    <li>Name: {{file.name}}</li>
+                    <li>Type: {{file.type}}</li>
+                </ul>
+            </section>
+        </div>
+        <div>
+            <button mat-button class="upload-button">Upload</button>
+        </div>
+        <div class="button" style="width: 500px">
+            <button mat-button>Generate Questions</button>
+        </div>
+    </div>

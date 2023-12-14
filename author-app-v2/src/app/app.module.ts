@@ -4,6 +4,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 import { HomePageComponent } from './home-page/home-page.component';
 import { MatFormFieldModule } from '@angular/material/form-field';
+import { CKEditorModule } from 'ckeditor4-angular';
+import { MatButtonModule } from '@angular/material/button';
 
 @NgModule({
   declarations: [
@@ -12,7 +14,9 @@ import { MatFormFieldModule } from '@angular/material/form-field';
   ],
   imports: [
     BrowserModule,
-    MatFormFieldModule
+    MatFormFieldModule,
+    CKEditorModule,
+    MatButtonModule
   ],
   providers: [],
   bootstrap: [AppComponent]
