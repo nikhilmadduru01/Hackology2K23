@@ -2,7 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { PreviewPdfComponent } from '../preview-pdf/preview-pdf.component';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-
+import { CKEditorComponent } from 'ckeditor4-angular';
+import {MatButtonModule} from '@angular/material/button';
 
 
 @Component({
@@ -90,5 +91,4 @@ export class HomePageComponent implements OnInit {
       data : this.pdfContent
     });
   }
-
 }

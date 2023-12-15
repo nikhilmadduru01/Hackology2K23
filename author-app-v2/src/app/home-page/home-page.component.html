@@ -1,7 +1,7 @@
 <div class="container">
+
     <div class="text-area" *ngIf="!file">
         <ckeditor [config]="ckeConfig" data=""></ckeditor>
-
     </div>
     <div class="input-file">
         <input type="file" class="file-input" (change)="onChange($event)" #fileUpload />
@@ -9,6 +9,8 @@
             <iframe [src]="pdfContent" width="100%" height="500px"></iframe>
         </div>
         <!-- <div *ngIf="file">
+
+        <div *ngIf="file">
             <section class="file-info">
                 File details:
                 <ul>
@@ -25,5 +27,11 @@
         </div>
         <div style="width: 500px">
             <button mat-button [disabled]="!file">Generate Questions</button>
+        </div>
+        <div>
+            <button mat-button class="upload-button">Upload</button>
+        </div>
+        <div class="button" style="width: 500px">
+            <button mat-button>Generate Questions</button>
         </div>
     </div>

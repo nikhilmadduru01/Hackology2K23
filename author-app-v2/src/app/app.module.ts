@@ -11,12 +11,21 @@ import { MatDialogModule, MAT_DIALOG_DATA, MatDialogRef } from "@angular/materia
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
 
+import { MatCardModule} from '@angular/material/card';
+import { MatRadioModule} from '@angular/material/radio';
+import { MatListModule } from '@angular/material/list';
+import { MatIconModule } from '@angular/material/icon';
+import { MatButtonModule } from '@angular/material/button';
+import { McqQuestionsListComponent } from './mcq-questions-list/mcq-questions-list.component';
+import { McqQuestionComponent } from './mcq-question/mcq-question.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomePageComponent,
     PreviewPdfComponent,
+    McqQuestionsListComponent,
+    McqQuestionComponent
   ],
   imports: [
     BrowserModule,
@@ -30,6 +39,12 @@ import { HttpClientModule } from '@angular/common/http';
   providers: [
     { provide: MAT_DIALOG_DATA, useValue: {} }
   ],
+    MatCardModule,
+    MatRadioModule,
+    MatListModule,
+    MatIconModule
+  ],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
