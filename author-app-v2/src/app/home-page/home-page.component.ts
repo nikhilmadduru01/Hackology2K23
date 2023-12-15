@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
+import { PreviewPdfComponent } from '../preview-pdf/preview-pdf.component';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { CKEditorComponent } from 'ckeditor4-angular';
 import {MatButtonModule} from '@angular/material/button';
-
 
 
 @Component({
@@ -13,7 +15,10 @@ export class HomePageComponent implements OnInit {
   
   file: File | null = null;
   ckeConfig: any;
-  constructor() { }
+  pdfContent: any;
+
+  constructor(public dialog: MatDialog,
+              private httpClient: HttpClient) { }
 
   ngOnInit(): void {
 
@@ -30,17 +35,60 @@ export class HomePageComponent implements OnInit {
       entities: false,
       title: "Text Area",
       height: 600,
-      width: 900,
+      width: 700,
       forcePasteAsPlainText: true
     };
   }
 
   onChange(event: any) {
     const file: File = event.target.files[0];
-
+    console.log(file);
     if (file) {
-      this.file = file;
+      this.readPDFContent(file);
     }
   }
 
+  readPDFContent(file: File) {
+    const reader = new FileReader();
+
+    reader.onload = (e: any) => {
+      // e.target.result contains the content of the file
+      const fileContent: string | ArrayBuffer = e.target.result;
+
+      // Display the PDF content using data URL
+       this.pdfContent = this.decodeBase64(this.sanitizeURL(fileContent.toString()));
+      //this.pdfContent = this.sanitizeURL(fileContent.toString());
+      console.log(this.pdfContent);
+    };
+
+    reader.readAsDataURL(file);
+    // Using readAsDataURL to display content in an iframe
+  }
+
+  private sanitizeURL(url: string): string {
+    // Sanitization to prevent security risks
+    // This step is crucial to avoid potential security vulnerabilities
+    // You might want to implement a more robust sanitization mechanism
+    return url; // Return the sanitized URL for now
+  }
+
+  private decodeBase64(encodedText: string) {
+   return atob(encodedText);
+  }
+
+  // private decodeBase64(encodedText: string): Promise<string| undefined> {
+  //   const url = 'data:text/plain;base64,' + encodedText;
+  //   const headers = new HttpHeaders().set('Content-Type', 'text/plain');
+
+  //   return this.httpClient.get(url, { headers, responseType: 'text' }).toPromise();
+  // }
+
+  openPreview(event: Event){
+    debugger
+    this.dialog.open(PreviewPdfComponent, {
+      width: '600px',
+      height: '600px',
+      data : this.pdfContent
+    });
+  }
 }
