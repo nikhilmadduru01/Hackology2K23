@@ -1,5 +1,32 @@
 .container {
+<<<<<<< HEAD
     width: 48vw;
     height: 100vh;
     padding: 0;;
+=======
+    display: flex;
+    flex-direction: column;
+    margin: 20px;
+    // background-color: rgb(228, 215, 215);
+   
+}
+
+.input-file {
+    margin-top: 10px;
+    padding: 5px;
+    color: red;
+}
+
+.button{
+    margin-top: 30px;;
+    // margin-top: 800px;
+    float: bottom;
+}
+
+.upload-button{
+    margin: 10px;
+    background-color: #1976d2;
+    border: none;
+    color: white;
+>>>>>>> b67672c22886d06a4de36ae976a70bcf30caa5d7
 }
