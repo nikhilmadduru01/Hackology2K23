@@ -1,0 +1,6 @@
+<div class="list-wrapper">
+    <div *ngFor="let question of question_list; index as item_index" class="list-item">
+        <mcq-question [question]="question" (editQuesiton)="editQuestion">
+        </mcq-question>
+    </div>
+</div>

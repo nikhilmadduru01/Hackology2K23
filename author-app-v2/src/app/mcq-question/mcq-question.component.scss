@@ -1,0 +1,27 @@
+.styled-card {
+    max-width: 600px;
+    margin: auto;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.styled-mat-list .mat-list-item {
+    border-bottom: 1px solid #e0e0e0;
+    transition: background-color 0.3s;
+}
+
+.styled-mat-list .mat-list-item:last-child {
+    border-bottom: none;
+}
+
+.styled-mat-list .mat-list-item:hover {
+    background-color: #f5f5f5;
+}
+
+.styled-mat-list .mat-icon {
+    color: #00c853;
+}
+
+.list-item-description {
+    color: #666;
+    font-size: 0.9rem;
+}
