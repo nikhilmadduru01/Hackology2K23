@@ -8,6 +8,8 @@ import { MCQQuestion } from '../models/question.model';
 })
 export class McqQuestionsListComponent implements OnInit {
 
+  currentQuestion: MCQQuestion | undefined;
+
   question_list: MCQQuestion[] = [
     {
       questionText: "Question 1",
@@ -85,5 +87,11 @@ export class McqQuestionsListComponent implements OnInit {
   editQuestion() {
 
   }
+
+  convertToUpperCase(str: string) {
+    return str.toLocaleUpperCase();
+  }
+
+  
 
 }

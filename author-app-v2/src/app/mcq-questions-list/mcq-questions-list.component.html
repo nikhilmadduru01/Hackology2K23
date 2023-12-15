@@ -1,6 +1,54 @@
-<div class="list-wrapper">
-    <div *ngFor="let question of question_list; index as item_index" class="list-item">
-        <mcq-question [question]="question" (editQuesiton)="editQuestion">
-        </mcq-question>
+<div class="container">
+    <mat-toolbar class="primary toolbar-class">
+        <div class="nav-text">Questions</div>
+    </mat-toolbar>
+
+    <mat-card class="question-card">
+        <mat-card-content class="question-content">
+            <p class="question-text">
+                The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan.
+                A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally
+                bred for hunting.
+            </p>
+            <mat-list class="options-list" role="list">
+                <mat-list-item *ngFor="let i of [1,2,3,4]" class="option" role="listitem">
+                   <div class="option-id">
+                        {{convertToUpperCase('a')}}
+                   </div>.
+                   <div class="option-value">
+                        &nbsp; Item 1
+                   </div>
+                </mat-list-item>
+            </mat-list>
+        </mat-card-content>
+        <mat-card-actions class="question-options">
+            <div class="correct-option">
+                <div class="text-key">
+                    Correct Option
+                </div>
+                : &nbsp;
+                <div class="text-value">
+                    Answer - ({{convertToUpperCase('a')}})
+                </div>
+            </div>
+            <button mat-button class="primary-button">
+                Edit Question
+            </button>
+        </mat-card-actions>
+    </mat-card>
+    <mat-divider></mat-divider>
+    <mat-toolbar class="toolbar-class v2">
+        <button  mat-button class="nav-button">Prev</button>
+        <div class="nav-text">1 of 5</div>
+        <button  mat-button class="nav-button">Next</button>
+    </mat-toolbar>
+    <mat-divider></mat-divider>
+    <div class="feedback-container">
+        <textarea class="feedback-text-area" matInput rows="10" cols="100" placeholder=" Please provide feedback for the question ..."></textarea>
     </div>
+    <mat-toolbar class="toolbar-class v2">
+        <mat-icon class="feedback-icon">feedback</mat-icon>
+        <div class="nav-text">Feedback</div>
+        <button  mat-button class="nav-button">Submit</button>
+    </mat-toolbar>
 </div>

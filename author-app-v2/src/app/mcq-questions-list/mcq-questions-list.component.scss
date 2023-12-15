@@ -1,0 +1,104 @@
+.container {
+    width: 48vw;
+    height: 100vh;
+    padding: 0;
+    border: solid black;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+
+    .toolbar-class {
+        height: 7.5vh;
+        display: flex;
+        background-color: cornflowerblue;
+        flex-direction: row;
+        justify-content: center;
+
+        .nav-text {
+            color: white;
+            font-size: 24px;
+            font-weight: 500;
+        }
+    }
+
+    .question-card {
+        height: 50vh;
+
+        .question-content {
+            .question-text {
+                font-size: 20px;
+                font-weight: 600;
+            }
+
+            .options-list {
+                .option {
+                    font-size: 20px;
+
+                    .option-id {
+
+                        font-weight: 600;
+                    }
+
+                    .option-value {}
+                }
+            }
+        }
+
+        .question-options {
+            margin-top: 20px;
+            padding-left: 10px;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+
+            .correct-option {
+                display: flex;
+                flex-direction: row;
+                justify-content: flex-start;
+                font-size: 20px;
+
+                .text-key {
+                    font-weight: 600;
+
+                }
+
+                .text-value {}
+            }
+
+            .primary-button {
+                width: 10vw;
+                font-size: 20px;
+                background-color: cornflowerblue;
+                color: white;
+                font-weight: 500;
+            }
+        }
+    }
+
+    .v2 {
+        justify-content: space-between;
+
+        .nav-button {
+            width: 5vw;
+            background-color: white;
+            font-weight: 500
+        }
+
+        .feedback-icon {
+            width: 5vw;
+            color: white;
+        }
+    }
+
+    .feedback-container {
+        height: 35vh;
+        .feedback-text-area {
+            margin-top: 3vh;
+            margin-left: 4vw;
+        }
+    }
+
+
+
+}

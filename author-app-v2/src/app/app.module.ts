@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
 import { AppComponent } from './app.component';
 import { HomePageComponent } from './home-page/home-page.component';
@@ -8,18 +9,17 @@ import { MatCardModule} from '@angular/material/card';
 import { MatRadioModule} from '@angular/material/radio';
 import { MatListModule } from '@angular/material/list';
 import { MatIconModule } from '@angular/material/icon';
+import { MatToolbarModule} from '@angular/material/toolbar';
 
 import { CKEditorModule } from 'ckeditor4-angular';
 import { MatButtonModule } from '@angular/material/button';
 import { McqQuestionsListComponent } from './mcq-questions-list/mcq-questions-list.component';
-import { McqQuestionComponent } from './mcq-question/mcq-question.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomePageComponent,
     McqQuestionsListComponent,
-    McqQuestionComponent
   ],
   imports: [
     BrowserModule,
@@ -29,7 +29,9 @@ import { McqQuestionComponent } from './mcq-question/mcq-question.component';
     MatCardModule,
     MatRadioModule,
     MatListModule,
-    MatIconModule
+    MatIconModule,
+    MatToolbarModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
